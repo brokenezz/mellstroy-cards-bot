@@ -446,9 +446,12 @@ async def main():
     # Подключаемся к базе данных
     await db.connect()
     
+    # Пока убираем веб-сервер, чтобы избежать лишних зависимостей
+    # await start_web_server()
+    
     # Запускаем бота
     logger.info("Starting bot...")
     await dp.start_polling(bot)
 
 if __name__ == "__main__":
-    asyncio.run(main())
+    asyncio.run(main()
