@@ -13,6 +13,7 @@ services:
         fromDatabase:
           name: mellstroy-db
           property: connectionString
+    pythonVersion: 3.11.4
 
 databases:
   - name: mellstroy-db
