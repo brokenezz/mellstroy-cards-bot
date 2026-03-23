@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: mellstroy-bot
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python bot.py
+    envVars:
+      - key: BOT_TOKEN
+        sync: false
+      - key: ADMIN_IDS
+        sync: false
+      - key: DATABASE_URL
+        fromDatabase:
+          name: mellstroy-db
+          property: connectionString
+
+databases:
+  - name: mellstroy-db
+    plan: free
